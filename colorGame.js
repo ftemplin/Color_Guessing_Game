@@ -8,3 +8,9 @@ var colors = [
 	"rgb(0, 200, 200)",
 ]
 
+var squares = document.querySelectorAll(".squares")
+
+for(var i = 0; i < square.length; i++){
+	squares[i].style.backgroundColor = colors[i];
+}
+
