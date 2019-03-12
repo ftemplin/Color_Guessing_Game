@@ -27,7 +27,7 @@ for(var i = 0; i < squares.length; i++){
 		if(clickedColor === colorPicked){
 			alert("correct");
 		}else{
-			alert("wrong");
+			this.style.backgroundColor = "#232323"
 		}
 	});
 }
