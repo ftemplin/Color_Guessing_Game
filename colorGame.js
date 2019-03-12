@@ -1,5 +1,5 @@
 //alert("connected");
-var colors = genrateRandomColors(6);
+var colors = generateRandomColors(6);
 	
 var squares = document.querySelectorAll(".square");
 var colorPicked = colorPicked();
@@ -41,4 +41,26 @@ function changeColors(color){
 function colorPicked(){
 	var random = Math.floor(Math.random() * colors.length)
 	return colors [random];
+}
+
+function generateRandomColors(num){
+	//make array
+	var arr = []
+	// add num random colors to array
+	for(var i = 0; i < num; i++){
+		arr.push(randomColor())
+		//get random color and push to array
+	}
+	//return array
+return arr;
+}
+
+function randomColor(){
+	//pick a red 0-255
+	var r = Math.floor(Math.random() * 256);
+	//pick green 0-255
+	var g = Math.floor(Math.random() * 256);
+	//pick blue 0-255
+	var b = Math.floor(Math.random() * 256);
+	return "rgb(" + r +", " + g +", " + b + ")";
 }
