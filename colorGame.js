@@ -1,14 +1,8 @@
 //alert("connected");
-var colors = [
-	"rgb(255, 0, 0)",
-	"rgb(0, 0, 255)",
-	"rgb(0, 255, 0)",
-	"rgb(200, 200, 0)",
-	"rgb(200, 0, 200)",
-	"rgb(0, 200, 200)"
-]
+var colors = genrateRandomColors(6);
+	
 var squares = document.querySelectorAll(".square");
-var colorPicked = colors[3];
+var colorPicked = colorPicked();
 var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 
@@ -42,4 +36,9 @@ function changeColors(color){
 		squares[i].style.backgroundColor = color;
 	}
 	
+}
+
+function colorPicked(){
+	var random = Math.floor(Math.random() * colors.length)
+	return colors [random];
 }
