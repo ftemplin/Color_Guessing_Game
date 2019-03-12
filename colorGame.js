@@ -26,7 +26,8 @@ for(var i = 0; i < squares.length; i++){
 		var clickedColor = this.style.backgroundColor;
 		//compare the clicked color to the picked color
 		if(clickedColor === colorPicked){
-			alert("correct");
+			messageDisplay.textContent = "Correct!";
+			changeColors(clickedColor);
 		}else{
 			this.style.backgroundColor = "#232323";
 			messageDisplay.textContent = "Try Again!";
@@ -34,3 +35,11 @@ for(var i = 0; i < squares.length; i++){
 	});
 }
 
+function changeColors(color){
+	//loop through all squares
+	for(var i = 0; i < squares.length; i++){
+		//change color of a squares
+		squares[i].style.backgroundColor = color;
+	}
+	
+}
