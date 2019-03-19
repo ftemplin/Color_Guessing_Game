@@ -5,6 +5,11 @@ var colorPicked = colorPicked();
 var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
+var resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener("click", function(){
+	alert("Clicked Reset Button");
+})
 
 colorDisplay.textContent = colorPicked;
 
@@ -15,7 +20,7 @@ for(var i = 0; i < squares.length; i++){
 
 	// add click listener for squares
 	squares[i].addEventListener("click", function(){
-		//alert("square clicked!");
+		// alert("square clicked!");
 		// grab color of picked color
 		var clickedColor = this.style.backgroundColor;
 		//compare the clicked color to the picked color
