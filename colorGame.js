@@ -10,11 +10,15 @@ var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
 easyBtn.addEventListener("click", function(){
-	alert("Easy button clicked");
+	// alert("Easy button clicked");
+	easyBtn.classList.add("selected");
+	hardBtn.classList.remove("selected");
 });
 
 hardBtn.addEventListener("click", function(){
-	alert("Easy button clicked");
+	// alert("hard button clicked");
+	hardBtn.classList.add("selected");
+	easyBtn.classList.remove("selected");
 });
 
 
