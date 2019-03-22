@@ -6,9 +6,20 @@ var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function(){
+	alert("Easy button clicked");
+});
+
+hardBtn.addEventListener("click", function(){
+	alert("Easy button clicked");
+});
+
 
 resetButton.addEventListener("click", function(){
-	// alert("Clicked Reset Button");
+	alert("Clicked Reset Button");
 	//Generate new colors
 	colors = generateRandomColors(6);
 	//pick a new color
