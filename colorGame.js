@@ -13,6 +13,16 @@ easyBtn.addEventListener("click", function(){
 	// alert("Easy button clicked");
 	easyBtn.classList.add("selected");
 	hardBtn.classList.remove("selected");
+	colors = generateRandomColors(3);
+	colorPicked = pickColor();
+	colorDisplay.textContent = colorPicked;
+	for(var i = 0; i < squares.length; i++){
+		if(colors[i]){
+			squares[i].style.backgroundColor = colors[i];
+		}else{
+			squares[i].style.display = "none";
+		}
+	}
 });
 
 hardBtn.addEventListener("click", function(){
