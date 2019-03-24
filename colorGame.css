@@ -23,11 +23,13 @@ h1 {
 	margin: 0;
 	font-weight: normal;
 	text-transform: uppercase;
+	line-height: 1.1;
 }
 
-/*span {
-	color: white;
-}*/
+
+#colorDisplay{
+	font-size: 200%;
+}
 
 #stripe {
 	background-color: white;
