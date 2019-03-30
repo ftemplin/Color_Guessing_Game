@@ -7,40 +7,49 @@ var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easyBtn");
-var hardBtn = document.querySelector("#hardBtn");
+// var easyBtn = document.querySelector("#easyBtn");
+// var hardBtn = document.querySelector("#hardBtn");
 var numOfSquares = 6; 
+var modeButtons = document.querySelectorAll(".mode")
 
-easyBtn.addEventListener("click", function(){
-	// alert("Easy button clicked");
-	easyBtn.classList.add("selected");
-	hardBtn.classList.remove("selected");
-	numSquares = 3;
-	colors = generateRandomColors(numSquares);
-	colorPicked = pickColor();
-	colorDisplay.textContent = colorPicked;
-	for(var i = 0; i < squares.length; i++){
-		if(colors[i]){
-			squares[i].style.backgroundColor = colors[i];
-		}else{
-			squares[i].style.display = "none";
-		}
-	}
-});
-
-hardBtn.addEventListener("click", function(){
-	//alert("hard button clicked");
-	hardBtn.classList.add("selected");
-	easyBtn.classList.remove("selected");
-	numSquares = 6;
-	colors = generateRandomColors(numSquares);
-	colorPicked = pickColor();
-	colorDisplay.textContent = colorPicked;
-	for(var i = 0; i < squares.length; i++){
-			squares[i].style.backgroundColor = colors[i];
-			squares[i].style.display = "block";
-		}
+for (var i = 0; i < modeButtons.length; i++) {
+	modeButtons[i].addEventListener("click", function(){
+		modeButtons[0].classList.remove("selected");
+		modeButtons[1].classList.remove("selected");
+		this.classList.add("selected");
 	});
+}
+
+// easyBtn.addEventListener("click", function(){
+// 	// alert("Easy button clicked");
+// 	easyBtn.classList.add("selected");
+// 	hardBtn.classList.remove("selected");
+// 	numSquares = 3;
+// 	colors = generateRandomColors(numSquares);
+// 	colorPicked = pickColor();
+// 	colorDisplay.textContent = colorPicked;
+// 	for(var i = 0; i < squares.length; i++){
+// 		if(colors[i]){
+// 			squares[i].style.backgroundColor = colors[i];
+// 		}else{
+// 			squares[i].style.display = "none";
+// 		}
+// 	}
+// });
+
+// hardBtn.addEventListener("click", function(){
+// 	//alert("hard button clicked");
+// 	hardBtn.classList.add("selected");
+// 	easyBtn.classList.remove("selected");
+// 	numSquares = 6;
+// 	colors = generateRandomColors(numSquares);
+// 	colorPicked = pickColor();
+// 	colorDisplay.textContent = colorPicked;
+// 	for(var i = 0; i < squares.length; i++){
+// 			squares[i].style.backgroundColor = colors[i];
+// 			squares[i].style.display = "block";
+// 		}
+// 	});
 
 
 
@@ -56,6 +65,7 @@ resetButton.addEventListener("click", function(){
 	for(var i = 0; i < squares.length; i++){
 	// add initial colors to squares
 	squares[i].style.backgroundColor = colors[i];
+	this.textContent = "New Colors";
 	messageDisplay.textContent = "";
 	}
 	h1.style.backgroundColor = "steelblue";
