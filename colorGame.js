@@ -9,7 +9,7 @@ var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 // var easyBtn = document.querySelector("#easyBtn");
 // var hardBtn = document.querySelector("#hardBtn");
-var numOfSquares = 6; 
+// var numOfSquares = 6; 
 var modeButtons = document.querySelectorAll(".mode")
 
 for (var i = 0; i < modeButtons.length; i++) {
@@ -17,7 +17,42 @@ for (var i = 0; i < modeButtons.length; i++) {
 		modeButtons[0].classList.remove("selected");
 		modeButtons[1].classList.remove("selected");
 		this.classList.add("selected");
+		
+		// below is optional turenary version of the update code for numsquares
+		// this.textContent === "Easy" ? numSquares =3: numSquares = 6;
+
+		// updated the numsquares based on the button selected
+		if(this.textContent === "Easy"){
+			numSquares = 3;
+		}else{
+			numSquares = 6;
+		}
+		reset();
+		// figure out number of squares
+		//pick new colors
+		//pick a new pickedColor
+		//update page to reflect changes
+
 	});
+}
+
+function reset(){
+	colors = generateRandomColors(numSquares);
+	//pick a new color
+	colorPicked = pickColor();
+	//change color display to match pickedcolor
+	colorDisplay.textContent = colorPicked;
+	
+	resetButton.textContent = "New Colors";
+	messageDisplay.textContent = "";
+
+	//Change colors of the squares
+	for(var i = 0; i < squares.length; i++){
+	// add initial colors to squares
+	squares[i].style.backgroundColor = colors[i];
+	
+	}
+	h1.style.backgroundColor = "steelblue";
 }
 
 // easyBtn.addEventListener("click", function(){
